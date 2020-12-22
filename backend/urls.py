@@ -1,5 +1,5 @@
 from django.conf import settings
-from django.conf.urls import include
+from django.conf.urls import url, include
 from django.contrib import admin
 from django.urls import path
 
@@ -8,7 +8,7 @@ from django.views import debug
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', debug.default_urlconf),
+    url(r'^', include('howdy.urls')),
 ]
 
 if settings.DEBUG:
